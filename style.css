@@ -897,11 +897,23 @@ p {
     margin-bottom: 20px;
 }
 
-.center-button {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+/*-- Style for the button--*/
+.center-button a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #76ac6b; /* Button background color */
+    color: white; /* Button text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Adjust text size as needed */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
+
+/* Hover effect for the button */
+.center-button a:hover {
+    background-color: #45a049; /* Darker shade for hover effect */
+}
+
 
 button {
     background-color: #76ac6b; /* Applying the specified color */
@@ -1084,7 +1096,7 @@ body, html {
 
 .container {
     padding: 20px;
-    background-color: rgba(217, 201, 201, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 10px;
     margin: 20px auto;
     max-width: 800px;
@@ -1218,6 +1230,17 @@ body, html {
     cursor: pointer;
 }
 
+.progress-circle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #76ac6b; /* Color of the small circle */
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform-origin: center -90px; /* Adjust based on outer ring size */
+}
+
 .reset-button, .home-button {
     padding: 10px 20px;
     font-size: 1em;
@@ -1230,13 +1253,14 @@ body, html {
 }
 
 .reset-button:hover, .home-button:hover {
-    background: #76ac6b; /* Hover color for the button */
+    background: #5c8d57; /* Hover color for the button */
     transform: scale(1.05);
 }
 
 .home-button {
     margin-top: 30px; /* Extra space for the home button */
 }
+
 /*--Ramadan Calendar--*/
 body, html {
     margin: 0;
@@ -1314,48 +1338,151 @@ button:hover {
         padding: 5px;
     }
 }
-/*--compass*/
-.compass {
-    position: relative;
-    width: 320px;
-    height: 320px;
-    border-radius: 50%;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    margin: auto;
+/*--Compass--*/
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    flex-direction: column;
   }
   
-  .compass > .arrow {
+  .compass-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .compass {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border: 15px solid #76ac6b;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .needle {
     position: absolute;
-    width: 0;
-    height: 0;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-style: solid;
-    border-width: 30px 20px 0 20px;
-    border-color: red transparent transparent transparent;
+    width: 7px;
+    height: 50px;
+    background: #76ac6b;
+    top: 30%;
+    transform-origin: bottom;
+    transition: transform 0.5s ease;
+  }
+  
+  .center-circle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #76ac6b;
+    border-radius: 50%;
     z-index: 1;
   }
   
-  .compass > .compass-circle,
-  .compass > .my-point {
-    position: absolute;
-    width: 80%;
-    height: 80%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: transform 0.1s ease-out;
-    background: url(https://cdn.onlinewebfonts.com/svg/img_467023.png) center no-repeat;
-    background-size: contain;
+  .qibla-indicator {
+    font-size: 24px;
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
   }
   
-  .compass > .my-point {
-    opacity: 0;
-    width: 20%;
-    height: 20%;
-    background: rgb(8, 223, 69);
-    border-radius: 50%;
-    transition: opacity 0.5s ease-out;
+  button {
+    background-color: #76ac6b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
   }
   
+  button:hover {
+    background-color: #76ac6b;
+    transform: scale(1.05);
+  }
+  
+  p {
+    margin-top: 20px;
+    font-size: 18px;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+  }
+  /*---Masjid Locator--*/
+  #map {
+    height: 600px;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+/*--icons*/
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.menu-item {
+    background-color: #76ac6b;
+    color: white; /* Keep text white */
+    padding: 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    flex: 1 1 calc(50% - 10px);
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+    background-image: linear-gradient(to bottom, #76ac6b, #76ac6b);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.menu-item:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    background-color: #b9d2ba;
+    transform: translateY(-5px);
+}
+
+.menu-item:active {
+    background-color: #84c387;
+    transform: scale(0.95);
+}
+
+.menu-item i {
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover i {
+    transform: rotate(20deg);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
