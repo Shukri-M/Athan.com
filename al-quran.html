@@ -74,16 +74,6 @@
                             htmlContent += `<p>${ayah.text}</p><p>${dataTransliteration.data.ayahs[index].text}</p>`;
                         });
 
-                        // Add audio player
-                        htmlContent += `
-                            <div class="audio-player">
-                                <audio controls>
-                                    <source src="https://verses.quran.com/${surahNumber}.mp3" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </div>
-                        `;
-
                         surahContent.innerHTML = htmlContent;
                         surahContent.style.display = 'block';
                         activeSurah = surahNumber;
