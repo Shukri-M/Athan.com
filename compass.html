@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Compass</title>
+  <title>Qibla Finder</title>
   <link rel="stylesheet" href="style.css">
+  <script src="compass.js" defer></script>
 </head>
 <body>
-  <div class="container">
-    <h1>Qibla Compass</h1>
+  <div class="compass-container">
     <div class="compass">
-      <div class="arrow"></div>
-      <div class="compass-circle"></div>
-      <div class="my-point"></div>
+      <div class="needle" id="needle"></div>
+      <div class="center-circle"></div>
     </div>
-    <button class="start-btn">Start compass</button>
+    <button id="find-qibla">Look for Direction</button>
+    <p id="qibla-direction">Press "Look for Direction" to find the Qibla.</p>
+    <button id="back-home">Back to Home</button>
   </div>
-  <script src="script.js"></script>
 </body>
 </html>
